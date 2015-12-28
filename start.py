@@ -340,6 +340,7 @@ def commandline:
 			forwards(1)
 			navix_directions.append("forwards")
 			command = raw_input("?")
+			return 0
 		elif command == "backwards":
 			backwards(1)
 			navix_directions.append("backwards")
@@ -391,6 +392,7 @@ def commandline:
 		elif command == "clear directions":
 			comeback("clear")
 			command == raw_input("?")
+			return 0
 		elif command == "network status":
 			netstat()
 			command == raw_input("?")
