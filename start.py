@@ -15,7 +15,7 @@ if sys.argv is None:
 else:
 	startarg = True
 
-print("PiCar 0.03beta - Developed by Leon Schwarze under GNU-GPL Version 2 license")
+print("PiCar 0.04beta - Developed by Leon Schwarze under GNU-GPL Version 2 license")
 print("Welcome!")
 print
 print("Setting up GPIO pins...")
@@ -23,7 +23,7 @@ print("Setting up GPIO pins...")
 #Setup GPIO
 GPIO.setmode(GPIO.BCM) #Set the pin numbers to Broadcom Mode
 
-#Check if started in debug mode (will be include later; buggy!)
+#Check if started in debug mode (will be included later; buggy!)
 #if startarg:
 #	if sys.argv[1] == "--debug":
 #		GPIO.setwarnings(True) #Show all errors
@@ -45,7 +45,7 @@ usonic_trig = 25
 usonic_echo = 27
 navix_directions = []
 
-#Setup the outputs
+#Set up the outputs
 GPIO.setup(motor1_a,GPIO.OUT) #Set 17 as output (Motor 1 A)
 GPIO.setup(motor1_b,GPIO.OUT) #Set 18 as output (Motor 1 B)
 GPIO.setup(motor2_a,GPIO.OUT) #Set 22 as output (Motor 2 A)
@@ -117,6 +117,7 @@ def selftest():
 
 
 #Define functions
+#LumiX engine
 def lumix(arg):
 	if arg == "blink":
 		GPIO.output(lighting, False)
@@ -129,7 +130,7 @@ def lumix(arg):
 		GPIO.output(lighting, True)
 	else:
 		pass
-
+#MoviX functions
 def forwards(dur):
 	GPIO.output(motor1_a, True)
 	time.sleep(dur)
@@ -177,7 +178,7 @@ def leftbackwards(dur):
 	time.sleep(0.5)
 	GPIO.output(motor2_a, False)
 	
-
+#NaviX functions
 def auto():
 	i = 1
 	navix()
@@ -209,20 +210,6 @@ def auto():
 			else:
 				break  
 	
-def help():
-	print("forwards - move your car forwards")
-	print("backwards - move your car backwards")
-	print("left forwards - move your car left forwards")
-	print("right forwards - move your car right forwards")
-	print("For turning backwards use the same pattern with backwards")
-	print("selftest - for testing the correct wiring of your car")
-	print("distance - shows the current distance to the next object using the ultrasonic sensor")
-	print("stealth - the lighting is switched off")
-	print("light - the lighting is switched on")
-	print("auto - activating autonomous drive")
-	print("help - show this overview")
-	print("quit - quit the application")
-
 def navix():
 	GPIO.output(usonic_trig, False)
 	time.sleep(2)
@@ -244,11 +231,6 @@ def navix():
 
 	global navix_distance
 	navix_distance = distance
-
-def update():
-	print("Executing updater...")
-	proc = subprocess.Popen("./updater.sh")
-	print("Terminating PiCar. Please restart after updating process.")
 
 def turnover(status):
 	print("Checking distance...")
@@ -310,15 +292,35 @@ def comeback(option):
 	else:
 		print("[Error] Invalid option!")
 
+#PiCar system processes
 def netstat():
 	print("Checking network status...")
-# 	proc = subprocess.Popen(["ping -c 2 www.google.com"], stdout = subprocess.PIPE, shell = True)
-# 	if "0% packet loss" in proc.stdout.read():
-# 		picar_netstat = "online"
-# 		print("[Done] PiCar is online.")
-# 	else:
-# 		picar_netstat = "offline"
-# 		print("[Error] PiCar is offline.")
+ 	proc = subprocess.Popen(["ping -c 2 www.google.com"], stdout = subprocess.PIPE, shell = True)
+ 	if "0% packet loss" in proc.stdout.read():
+ 		picar_netstat = "online"
+ 		print("[Done] PiCar is online.")
+ 	else:
+ 		picar_netstat = "offline"
+ 		print("[Error] PiCar is offline.")
+
+def help():
+	print("forwards - move your car forwards")
+	print("backwards - move your car backwards")
+	print("left forwards - move your car left forwards")
+	print("right forwards - move your car right forwards")
+	print("For turning backwards use the same pattern with backwards")
+	print("selftest - for testing the correct wiring of your car")
+	print("distance - shows the current distance to the next object using the ultrasonic sensor")
+	print("stealth - the lighting is switched off")
+	print("light - the lighting is switched on")
+	print("auto - activating autonomous drive")
+	print("help - show this overview")
+	print("quit - quit the application")
+	
+def update():
+	print("Executing updater...")
+	proc = subprocess.Popen("./updater.sh")
+	print("Terminating PiCar. Please restart after updating process.")
 
 
 #Open command interface
