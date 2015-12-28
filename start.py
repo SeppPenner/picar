@@ -291,7 +291,7 @@ def comeback(option):
 		#command == raw_input("?")
 	else:
 		print("[Error] Invalid option!")
-	#commandline()
+	return 0
 
 #PiCar system processes
 def netstat():
@@ -303,6 +303,7 @@ def netstat():
  	else:
  		picar_netstat = "offline"
  		print("[Error] PiCar is offline.")
+ 	return 0
 
 def help():
 	print("forwards - move your car forwards")
