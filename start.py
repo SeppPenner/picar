@@ -288,9 +288,10 @@ def comeback(option):
 		del navix_directions[:]
 		navix_directions.append("end")
 		print("[Done]")
+		command == raw_input("?")
 	else:
 		print("[Error] Invalid option!")
-	commandline()
+	#commandline()
 
 #PiCar system processes
 def netstat():
