@@ -53,7 +53,7 @@ GPIO.setup(motor2_b,GPIO.OUT) #Set 23 as output (Motor 2 B)
 GPIO.setup(lighting, GPIO.OUT) #Set up lighting output
 GPIO.setup(usonic_trig, GPIO.OUT)
 GPIO.setup(usonic_echo, GPIO.IN)
-print("[Done] Successful setup of GPIO pins.")
+print("[Done]")
 print("Starting LumiX engine...")
 GPIO.output(lighting, True)
 print("[Done]")
@@ -288,7 +288,7 @@ def comeback(option):
 		del navix_directions[:]
 		navix_directions.append("end")
 		print("[Done]")
-		command == raw_input("?")
+		#command == raw_input("?")
 	else:
 		print("[Error] Invalid option!")
 	#commandline()
