@@ -288,9 +288,9 @@ def comeback(option):
 		del navix_directions[:]
 		navix_directions.append("end")
 		print("[Done]")
-		commandline()
 	else:
 		print("[Error] Invalid option!")
+	commandline()
 
 #PiCar system processes
 def netstat():
@@ -316,7 +316,7 @@ def help():
 	print("auto - activating autonomous drive")
 	print("help - show this overview")
 	print("quit - quit the application")
-	
+
 def update():
 	print("Executing updater...")
 	proc = subprocess.Popen("./updater.sh")
