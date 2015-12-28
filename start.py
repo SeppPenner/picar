@@ -324,9 +324,9 @@ def update():
 
 
 #Open command interface
-command = raw_input("?")
 commandline()
-def commandline:	
+def commandline:
+	command == raw_input("?")	
 	while command != "quit":
 		print(command)
 		if command == "forwards":
