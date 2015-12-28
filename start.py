@@ -291,6 +291,7 @@ def comeback(option):
 		navix_directions.append("end")
 		print("[Done]")
 		#command == raw_input("?")
+		commandline()
 		return 0
 	else:
 		print("[Error] Invalid option!")
