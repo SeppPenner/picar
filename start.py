@@ -281,17 +281,21 @@ def comeback(option):
 					time.sleep(1)
 				else:
 					pass
+				return 0	
 		else:
-			print("[Error] The turnover function returned an error.")	
+			print("[Error] The turnover function returned an error.")
+			return 0	
 	elif option == "clear":
 		print("Clearing directions...")
 		del navix_directions[:]
 		navix_directions.append("end")
 		print("[Done]")
 		#command == raw_input("?")
+		return 0
 	else:
 		print("[Error] Invalid option!")
-	return 0
+		return 0
+	
 
 #PiCar system processes
 def netstat():
