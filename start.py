@@ -378,7 +378,7 @@ def commandline:
 			command = raw_input ("?")
 		elif command == "auto":
 			auto()
-			command == raw_input("?")
+			command = raw_input("?")
 		elif command == "update":
 			update()
 			break
@@ -390,7 +390,7 @@ def commandline:
 			command = raw_input("?")
 		elif command == "clear directions":
 			comeback("clear")
-			command == raw_input("?")
+			command = raw_input("?")
 		elif command == "network status":
 			netstat()
 			command == raw_input("?")
