@@ -319,7 +319,7 @@ def netstat():
 def help():
 	print("PiCar 0.4beta - Help")
 	print("====================")
-	print()
+	print
 	print("forwards - move your car forwards")
 	print("backwards - move your car backwards")
 	print("left forwards - move your car left forwards")
