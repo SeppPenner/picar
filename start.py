@@ -339,7 +339,6 @@ def commandline:
 			forwards(1)
 			navix_directions.append("forwards")
 			command = raw_input("?")
-			return 0
 		elif command == "backwards":
 			backwards(1)
 			navix_directions.append("backwards")
