@@ -114,7 +114,7 @@ def selftest():
 		print("[Error] PiCar is offline.")
 
 	print("Ended selftest without any errors")
-
+	return 0
 
 #Define functions
 #LumiX engine
@@ -124,24 +124,28 @@ def lumix(arg):
 		GPIO.output(lighting, True)
 		GPIO.output(lighting, False)
 		GPIO.output(lighting, True)
+		return 0
 	elif arg == "stealth":
 		GPIO.output(lighting, False)
+		return 0
 	elif arg == "light":
 		GPIO.output(lighting, True)
+		return 0
 	else:
 		pass
+		return 0
 #MoviX functions
 def forwards(dur):
 	GPIO.output(motor1_a, True)
 	time.sleep(dur)
 	GPIO.output(motor1_a, False)
-	
+	return 0
 
 def backwards(dur):
 	GPIO.output(motor1_b, True)
 	time.sleep(dur)
 	GPIO.output(motor1_b, False)
-	
+	return 0	
 
 def leftforwards(dur):
 	GPIO.output(motor1_a, True)
@@ -150,7 +154,7 @@ def leftforwards(dur):
 	GPIO.output(motor1_a, False)
 	time.sleep(0.5)
 	GPIO.output(motor2_a, False)
-	
+	return 0
 
 def rightforwards(dur):
 	GPIO.output(motor1_a, True)
@@ -159,7 +163,7 @@ def rightforwards(dur):
 	GPIO.output(motor1_a, False)
 	time.sleep(0.5)
 	GPIO.output(motor2_b, False)
-	
+	return 0	
 
 def rightbackwards(dur):
 	GPIO.output(motor1_b, True)
@@ -168,6 +172,7 @@ def rightbackwards(dur):
 	GPIO.output(motor1_b, False)
 	time.sleep(0.5)
 	GPIO.output(motor2_b, False)
+	return 0
 	
 
 def leftbackwards(dur):
@@ -177,6 +182,7 @@ def leftbackwards(dur):
 	GPIO.output(motor1_b, False)
 	time.sleep(0.5)
 	GPIO.output(motor2_a, False)
+	return 0
 	
 #NaviX functions
 def auto():
@@ -209,8 +215,10 @@ def auto():
 				continue
 			else:
 				break  
-	
+	return 0
+
 def navix():
+	#Measuring time 
 	GPIO.output(usonic_trig, False)
 	time.sleep(2)
 	GPIO.output(usonic_trig, True)
@@ -223,14 +231,13 @@ def navix():
 	while GPIO.input(usonic_echo)==1:
  		pulse_end = time.time()
 
+ 	#Calculating distance	
  	pulse_duration = pulse_end - pulse_start
-
 	distance = pulse_duration * 17150
-
 	distance = round(distance, 2)
-
 	global navix_distance
 	navix_distance = distance
+	return 0
 
 def turnover(status):
 	print("Checking distance...")
@@ -250,8 +257,8 @@ def turnover(status):
 		time.sleep(1)
 		leftbackwards(1)
 		time.sleep(1)
-		return 0
 		print("[Done]")
+		return 0
 
 def comeback(option):
 	if option == "normal":
@@ -322,11 +329,13 @@ def help():
 	print("auto - activating autonomous drive")
 	print("help - show this overview")
 	print("quit - quit the application")
+	return 0
 
 def update():
 	print("Executing updater...")
 	proc = subprocess.Popen("./updater.sh")
 	print("Terminating PiCar. Please restart after updating process.")
+	return 0
 
 
 #Open command interface
