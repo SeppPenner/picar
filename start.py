@@ -391,7 +391,6 @@ def commandline:
 		elif command == "clear directions":
 			comeback("clear")
 			command == raw_input("?")
-			return 0
 		elif command == "network status":
 			netstat()
 			command == raw_input("?")
