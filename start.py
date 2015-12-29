@@ -331,7 +331,7 @@ def update():
 
 #Open command interface
 commandline()
-def commandline:
+def commandline():
 	command == raw_input("?")	
 	while command != "quit":
 		print(command)
