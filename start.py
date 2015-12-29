@@ -330,7 +330,7 @@ def update():
 
 
 #Open command interface
-command == raw_input("?")	
+command = raw_input("?")	
 while command != "quit":
 	print(command)
 	if command == "forwards":
