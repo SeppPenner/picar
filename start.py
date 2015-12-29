@@ -411,7 +411,7 @@ while command != "quit":
 		command = raw_input("?")
 	elif command == "network status":
 		netstat()
-		command == raw_input("?")
+		command = raw_input("?")
 	else:
 		lumix("blink")
 		print("Invalid input, try again")
