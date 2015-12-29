@@ -321,17 +321,17 @@ def help():
 	print("====================")
 	print
 	print("DRIVING")
-	print("forwards - move your car forwards")
-	print("backwards - move your car backwards")
-	print("left forwards - move your car left forwards")
-	print("right forwards - move your car right forwards")
+	print("forwards - moves your car forwards")
+	print("backwards - moves your car backwards")
+	print("left forwards - moves your car left forwards")
+	print("right forwards - moves your car right forwards")
 	print("For turning backwards use the same pattern with backwards")
 	print
 	print("NAVIX")
 	print("distance - shows the current distance to the next object using the ultrasonic sensor")
-	print("auto - activating autonomous drive")
+	print("auto - activates NaviX autonomous drive")
 	print("turn over - turns the vehicle by 180 degrees")
-	print("come back - the vehicle returns to its starting position")
+	print("come back - returns the vehicle to its starting position")
 	print("clear directions - deletes the directions stored for NaviX Comeback")
 	print
 	print("SYSTEM")
@@ -339,9 +339,9 @@ def help():
 	print("light - the lighting is switched on")
 	print("selftest - for testing the correct wiring of your car")
 	print("network status - checks the internet connection of the vehicle")
-	print("update - starting the updating process")
-	print("help - show this overview")
-	print("quit - quit the application")
+	print("update - starts the updating process")
+	print("help - shows this overview")
+	print("quit - quits this application")
 	return 0
 
 def update():
