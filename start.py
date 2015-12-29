@@ -310,13 +310,16 @@ def netstat():
  	proc = subprocess.Popen(["ping -c 2 www.google.com"], stdout = subprocess.PIPE, shell = True)
  	if "0% packet loss" in proc.stdout.read():
  		picar_netstat = "online"
- 		print("[Done] PiCar is online.")
+ 		print("[Done] PiCar is connected to the internet.")
  	else:
  		picar_netstat = "offline"
- 		print("[Error] PiCar is offline.")
+ 		print("[Error] PiCar is not connected to the internet.")
  	return 0
 
 def help():
+	print("PiCar 0.4beta - Help")
+	print("====================")
+	print()
 	print("forwards - move your car forwards")
 	print("backwards - move your car backwards")
 	print("left forwards - move your car left forwards")
@@ -327,6 +330,11 @@ def help():
 	print("stealth - the lighting is switched off")
 	print("light - the lighting is switched on")
 	print("auto - activating autonomous drive")
+	print("update - starting the updating process")
+	print("turn over - turns the vehicle by 180 degrees")
+	print("come back - the vehicle returns to its starting position")
+	print("clear directions - deletes the directions stored for NaviX Comeback")
+	print("network status - checks the internet connection of the vehciel")
 	print("help - show this overview")
 	print("quit - quit the application")
 	return 0
