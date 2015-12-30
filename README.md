@@ -5,6 +5,7 @@ With PiCar and a Raspberry Pi(TM) you can control a radio-controlled car. The so
 
 Setup
 =====
+To operate correctly, we strongly recommend to connect your RasPi with a WiFi network using an additional USB-WiFi-plug. For autonomous drive you also need an ultrasonic sensor (tested: HC-SR04) which is installed at the front of the vehicle. 
 
 1. Download the archive and execute updater.sh
 2. Install and wire the motors of your RC-car with the Ryanteck MCB and plug it on your RasPi.
