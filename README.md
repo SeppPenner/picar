@@ -1,4 +1,4 @@
-PiCar 0.3beta
+PiCar 0.31beta
 =============
 
 Control your radio-controlled car with some Python and Ryanteck Motor Controller Board! Let it drive through an area completely autonomous!
@@ -40,6 +40,12 @@ Autonomous drive
 ================
 
 Just execute $ cd picar && sudo python auto.py
+
+PiCar 0.31beta
+==============
+
++ Removed some annoying infinite loops
++ Other bugfixes
 
 PiCar 0.3beta
 =============
