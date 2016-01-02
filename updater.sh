@@ -8,7 +8,7 @@ cd ~
 #mkdir ~/picar_newest
 #cd ~/picar_newest
 #Download update file
-wget -N https://github.com/LinuxMaya123/picar/releases/download/0.021alpha/picar_newest.tar.gz
+wget -N https://github.com/picar-os/picar/releases/download/0.31beta/picar_newest.tar.gz
 echo "Update successfully downloaded."
 echo "Unpacking update..."
 tar -xzf picar_newest.tar.gz
@@ -20,5 +20,4 @@ echo "Update successfully installed."
 #Doing some adverstising :)
 echo "Please report every bug to picar.infoandbugs@gmail.com."
 echo "Follow us on Twitter @picar_os!"
-sleep 1
 exit 0
