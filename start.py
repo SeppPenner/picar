@@ -15,7 +15,11 @@ if sys.argv is None:
 else:
 	startarg = True
 
-print("PiCar 0.04beta - Developed by Leon Schwarze under GNU-GPL Version 2 license")
+print("PiCar 1.0 - Developed by Leon Schwarze under GNU-GPL Version 2 license")
+print
+print("Initializing...")
+print("[Done]")
+print
 print("Welcome!")
 print
 print("Setting up GPIO pins...")
@@ -417,9 +421,8 @@ while command != "quit":
 		command = raw_input("?")
 	else:
 		lumix("blink")
-		print("Invalid input, try again")
+		print("[ERROR] Invalid input, please try again.")
 		command = raw_input("?")
 
 print("Terminating PiCar...")
 print("[Done]")
-print
