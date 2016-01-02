@@ -20,4 +20,5 @@ echo "Update successfully installed."
 #Doing some adverstising :)
 echo "Please report every bug to picar.infoandbugs@gmail.com."
 echo "Follow us on Twitter @picar_os!"
+echo "Hit ENTER to terminate."
 exit 0
