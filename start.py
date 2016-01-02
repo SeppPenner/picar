@@ -14,7 +14,7 @@ if sys.argv is None:
 	startarg = False
 else:
 	startarg = True
-
+proc = subprocess.Popen(["clear"] stdout = subprocess.PIPE, shell = True)
 print("PiCar 1.0 - Developed by Leon Schwarze under GNU-GPL Version 2 license")
 print
 print("Initializing...")
