@@ -109,11 +109,10 @@ def selftest():
 	print("Checking network status...")
 	proc = subprocess.Popen(["ping -c 2 www.google.com"], stdout = subprocess.PIPE, shell = True)
 	if "0% packet loss" in proc.stdout.read():
-		print "[Done] PiCar is online." 
+		print "[Done] PiCar is connected to the internet." 
 	else:
-		print("[Error] PiCar is offline.")
-
-	print("Ended selftest without any errors")
+		print("[Error] PiCar is not connected to the internet.")
+	print("[OK] Finished selftest without any errors")
 	return 0
 
 #Define functions
@@ -187,7 +186,9 @@ def leftbackwards(dur):
 #NaviX functions
 def auto():
 	i = 1
+	print("Measuring current distance...")
 	navix()
+	print("[Done]")
 	navix_validation = raw_input("Please confirm autonomous drive by pressing y or quit with q: ")
 	while navix_validation != "q":
 		if i < 6:
@@ -240,7 +241,7 @@ def navix():
 	return 0
 
 def turnover(status):
-	print("Checking distance...")
+	print("Measuring current distance...")
 	navix()
 	if navix_distance < 70:
 		print("[Error] Not enough space!")
@@ -266,6 +267,7 @@ def comeback(option):
 		print("[Done]")
 		status = turnover(0)
 		if status == 0:
+			print("Executing comeback procedure...")
 			while navix_directions[-1] != "end":
 				step = navix_directions.pop()
 				if step == "forwards":
@@ -288,6 +290,7 @@ def comeback(option):
 					time.sleep(1)
 				else:
 					pass
+				print("[Done]")
 				return 0	
 		else:
 			print("[Error] The turnover function returned an error.")
