@@ -1,4 +1,4 @@
-# PiCar 0.31beta
+# PiCar 1.0
 
 With PiCar and a Raspberry Pi(TM) you can control a radio-controlled car. The software offers you a mode to manually control the vehicle, but also an autonomous drive mode, the "NaviX" engine, which enables the car to drive even through an unknown area using an ultrasonic sensor. The "NaviX" engine is also able to bring back your vehicle to its starting position. The "LumiX" engine offers several features to provide visual feedback and the "MoviX" engine communicates with the motors of the RC-car. You can control your car using a command-line interface (CLI). 
 
@@ -6,7 +6,7 @@ With PiCar and a Raspberry Pi(TM) you can control a radio-controlled car. The so
 
 To operate correctly, we strongly recommend to connect your RasPi with a WiFi network using an additional USB-WiFi-plug. For autonomous drive you also need an ultrasonic sensor (tested: HC-SR04) which is installed at the front of the vehicle. 
 
-1. Download the archive and execute updater.sh
+1. Download the archive and unpack it.
 2. Install and wire the motors of your RC-car with the Ryanteck MCB and plug it on your RasPi.
 3. Connect lighting (if available) to pin 24 and GROUND.
 4. Move to the "picar"-directory and execute start.py as root.
@@ -36,6 +36,11 @@ After starting the program, you can use the following commands:
 + network status - checks if PiCar is online
 
 ## Versions
+
+### PiCar 1.0
+
++ Improved system messages
++ Bug fixes
 
 ### PiCar 0.31beta
 
