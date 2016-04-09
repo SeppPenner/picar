@@ -15,7 +15,7 @@ if sys.argv is None:
 else:
 	startarg = True
 print("PiCar 1.0 - Developed by Leon Schwarze under GNU-GPL Version 2 license")
-print("This commit is verified with a valid GPG key.")
+print("This commit is verified with a valid GPG key. Test")
 print
 print("Initializing...")
 print("[Done]")
